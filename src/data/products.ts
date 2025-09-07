@@ -1,0 +1,83 @@
+// src/data/products.ts
+
+export const products = [
+  {
+    id: 1,
+    name: "Щавель",
+    description: "Освежающий лимонад на основе щавеля. Кислинка и натуральный вкус зелени.",
+    price_wholesale: 380,
+    price_retail: 450,
+    unit: "л",
+    image: '/catalog-stickers/щавельсъемки.jpg',
+    compound: "Свежие листья щавеля, сахар, кислотность, вода.",
+    tags: ["лимонад", "натуральный", "кислый"],
+    characteristics: {
+      volume: "1 л",
+      packaging: "Пластиковая бутылка",
+      shelfLife: "7 суток при +2…+6 °C",
+      storage: "Хранить в холодильнике",
+    },
+  },
+  {
+    id: 2,
+    name: "Ананас-гранат",
+    description: "Сочетание тропического ананаса и терпкого граната. Идеален для жаркой погоды.",
+    price_wholesale: 480,
+    price_retail: 550,
+    unit: "л",
+    // image: '/catalog-stickers/ананасгранатсъемки.jpg',
+    image: '/products/ананасгранатпродукт.jpg',
+
+    compound: "Ананас, гранат, сахар, кислотность, вода.",
+    tags: ["лимонад", "фрукты", "сочный"],
+    characteristics: {
+      volume: "1 л",
+      packaging: "Пластиковая бутылка",
+      shelfLife: "7 суток при +2…+6 °C",
+      storage: "Хранить в холодильнике",
+      
+    },
+  },
+  {
+    id: 6,
+    name: "Колд брю ягодный",
+    description: "Холодный кофе на ягодах. Лёгкая кислинка и богатый вкус.",
+    price_wholesale: 180,
+    price_retail: 180,
+    unit: "стекло (0.25л)",
+    image: "/images/products/coldbrew-berry.jpg",
+    tags: ["cold brew", "кофе", "ягоды"],
+    characteristics: {
+      volume: "0.25 л",
+      packaging: "Стеклянная бутылка",
+      shelfLife: "14 суток при +2…+6 °C",
+      storage: "Хранить в холодильнике",
+    },
+  },
+];
+
+const items = [
+  { image: '/щавельсъемки.jpg', price: '380' },
+  { image: '/малинамарсъемки.jpg', price: '530' },
+  { image: '/вишнягранатсъемки.jpg', price: '480' },
+  { image: '/имбирныйсъемки.jpg', price: '400' },
+  { image: '/кивиклубникасъемки.jpg', price: '480' },
+  { image: '/колдбрюсъемки.jpg', price: '480' },
+  { image: '/малинаимбсъемки.jpg', price: '480' },
+  { image: '/мангомараксъемки.jpg', price: '530' },
+  { image: '/мохитоклассикасъемки.jpg', price: '480' },
+  { image: '/мохитоклубсъемки.jpg', price: '480' },
+  { image: '/облепихасъемки.jpg', price: '480' },
+  { image: '/ппщавельсъемки.jpg', price: '650' },
+  { image: '/смородинасъемки.jpg', price: '480' },
+  { image: '/тониклемонграсссъемки.jpg', price: '500' },
+  { image: '/цитруссъемки.jpg', price: '420' },
+  { image: '/шотайвагрейпсъемки.jpg', price: '200' },
+  { image: '/шотгранатсъемки.jpg', price: '200' },
+  { image: '/шотимбирныйсъемки.jpg', price: '200' },
+  { image: '/шотщавельсъемки.jpg', price: '200' },
+  { image: '/ягодныйчайсъемки.jpg', price: '470' },
+  { image: '/айвагрейпсъемки.jpg', price: '530' },
+  { image: '/гранатсъемки.jpg', price: '530' },
+  { image: '/ананасгранатсъемки.jpg', price: '480' },
+];

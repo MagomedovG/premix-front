@@ -1,0 +1,22 @@
+.image{
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    object-fit: cover;
+    transition: .1s scale ease-out;
+}
+.image:hover{
+    scale:1.05;
+}
+@media screen and (max-width:1200px) {
+    .image{
+        width: 300px;
+        height: 300px;
+    }
+}
+@media screen and (max-width:760px) {
+    .image{
+        width: 400px;
+        height: 400px;
+    }
+}
