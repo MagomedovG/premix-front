@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   description: "Щавель - 380р/л. Premix Lab — готовые заготовки для HoReCa: авторские лимонады, cold brew и фирменные чаи. Оптовые поставки, акция 4+1, брендированные меню с вашим логотипом. Доставка по Махачкале и Дагестану.",
   authors: [{ name: "Premix Lab", url: "https://premixlab.ru" }],
   icons:'/icons/logo.png',
-  themeColor: "#ffffff",
   metadataBase: new URL("https://premixlab.ru"),
   alternates: {
     canonical: "/",
