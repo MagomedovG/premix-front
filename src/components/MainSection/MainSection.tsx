@@ -13,7 +13,7 @@ const MainSection = () => {
         playsInline
         className="absolute top-16 right-0 w-full md:w-[60%] h-full object-cover"
       >
-        <source src="/movie/open.MOV" type="video/mp4" />
+        <source src="/movie/open.mov" type="video/mp4" />
         Ваш браузер не поддерживает видео
       </video>
 
