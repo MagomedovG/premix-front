@@ -79,10 +79,10 @@ export default function ClientsSection() {
   
     if (screenWidth < 640) {
       // mobile
-      mainRadius = 22
-      width = 400
+      mainRadius = 21
+      width = 380
       height = 400
-      radiusRange = [17, 32];
+      radiusRange = [16, 31];
       fontBase = 4;
     } else if (screenWidth < 800) {
       // tablet
