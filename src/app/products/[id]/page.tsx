@@ -14,26 +14,30 @@ export default function ProductPage({
   const { id } = params;
   const product = products.find((p) => p.id === Number(id));
 
-  const encryptedDate = searchParams?.date;
-  let date: string | null = null;
+  const encryptedDate = searchParams?.date ? decodeURIComponent(searchParams.date) : null;
+let date: string | null = null;
 
-  function formatDate(dateStr: string): string {
-    const date = new Date(dateStr);
-    const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const year = date.getFullYear();
-    return `${day}.${month}.${year}`;
-  }
+function formatDate(dateStr: string): string {
+  const d = new Date(dateStr); // 👈 переименовал переменную, чтобы не путать
+  if (isNaN(d.getTime())) return ""; // если некорректная дата
+  const day = String(d.getDate()).padStart(2, "0");
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const year = d.getFullYear();
+  return `${day}.${month}.${year}`;
+}
 
-  if (encryptedDate) {
-    try {
-      const bytes = CryptoJS.AES.decrypt(encryptedDate, secret);
-      const decoded = bytes.toString(CryptoJS.enc.Utf8);
-      if (decoded) date = formatDate(decoded);
-    } catch {
-      console.error("Ошибка расшифровки даты");
-    }
+if (encryptedDate) {
+  try {
+    const bytes = CryptoJS.AES.decrypt(encryptedDate, secret);
+    const decoded = bytes.toString(CryptoJS.enc.Utf8);
+    if (decoded) date = formatDate(decoded);
+    console.log("encryptedDate:", encryptedDate);
+    console.log("decoded:", decoded);
+  } catch (err) {
+    console.error("Ошибка расшифровки даты:", err);
   }
+}
+
 
   if (!product) return notFound();
 

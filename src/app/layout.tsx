@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/live/premixice.jpg",
-        width: 1200,
-        height: 630,
+        width: 600,
+        height: 315,
         alt: "Premix Lab | Заготовки для общепита в Дагестане и по России",
       },
     ],
