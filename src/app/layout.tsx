@@ -15,12 +15,20 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Premix Lab | Заготовки для HoReCa в Махачкале и по России",
+    title: "Premix Lab | Заготовки для общепита в Дагестане и по России",
     description: "Оптовые поставки лимонадов, cold brew и чаев для баров, ресторанов и кофеен. Брендированные меню и акция 4+1.",
     url: "https://premixlab.ru",
     siteName: "Premix Lab",
     locale: "ru_RU",
     type: "website",
+    images: [
+      {
+        url: "/live/premixice.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Premix Lab | Заготовки для общепита в Дагестане и по России",
+      },
+    ],
   },
   keywords: [
     // Брендовые + гео
