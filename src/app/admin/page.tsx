@@ -28,7 +28,7 @@ export default function AdminPage() {
   };
 
   return (
-    <div className="flex flex-col items-center p-10">
+    <div className="flex flex-col items-center p-10 h-[95vh] pt-[20vh]">
       <h1 className="text-2xl font-bold mb-6">Генерация QR для товара</h1>
 
       {/* Выбор товара */}
