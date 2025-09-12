@@ -124,6 +124,7 @@ body {
 }
 .product-description{
   font-family: 'Idealist', sans-serif;
+  color:black;
 }
 @keyframes floaty {
   0%,

@@ -15,7 +15,7 @@ export default function AdminPage() {
   const encryptedDate = CryptoJS.AES.encrypt(today, secret).toString();
 
   const link = selectedId
-    ? `localhost:3000/products/${selectedId}?date=${encodeURIComponent(encryptedDate)}`
+    ? `https://premixlab.ru/products/${selectedId}?date=${encodeURIComponent(encryptedDate)}`
     : "";
 
   const downloadQR = () => {
@@ -29,11 +29,11 @@ export default function AdminPage() {
 
   return (
     <div className="flex flex-col items-center p-10 h-[95vh] pt-[20vh]">
-      <h1 className="text-2xl font-bold mb-6">Генерация QR для товара</h1>
+      <h1 className="text-2xl font-bold mb-6 text-black">Генерация QR для товара</h1>
 
       {/* Выбор товара */}
       <select
-        className="border p-2 rounded mb-6"
+        className="border p-2 rounded mb-6 text-black"
         value={selectedId ?? ""}
         onChange={(e) => setSelectedId(Number(e.target.value))}
       >
@@ -60,7 +60,7 @@ export default function AdminPage() {
           >
             Скачать QR
           </button>
-          <p>{link}</p>
+          <p className="text-black">{link}</p>
         </div>
       )}
     </div>

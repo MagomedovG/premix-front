@@ -14,7 +14,7 @@ export default function ProductPage({
   const { id } = params;
   const product = products.find((p) => p.id === Number(id));
 
-  const encryptedDate = searchParams.date;
+  const encryptedDate = searchParams?.date;
   let date: string | null = null;
 
   function formatDate(dateStr: string): string {
@@ -42,22 +42,32 @@ export default function ProductPage({
       <div className="mt-18 mb-8 md:my-24 flex flex-col md:flex-row justify-between md:items-center">
         <div>
           <h1 className="product-title text-5xl text-gray-900">{product.name}</h1>
-          <h3 className="product-description text-lg pl-2">заготовка на лимонад</h3>
+          <h3 className="product-description text-lg leading-[10px] mb-4 md:mb-0 md:pl-2">{product.description}</h3>
         </div>
-        {date && <p>Дата изготовления: {date}</p>}
+        {date && <p className="text-black">Дата изготовления: {date}</p>}
       </div>
 
       <div className="grid md:grid-cols-2 md:gap-8 items-start">
+        <div className="flex flex-col justify-between h-full">
+          <img src={product.image} alt="" className="rounded-2xl shadow-md mb-6 border object-cover h-[430px]"/>
+          <a
+              href="https://wa.me/79285455896"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-orange-500 hidden md:block text-center w-full hover:bg-orange-600 text-white font-semibold text-lg px-20 py-4 rounded-lg transition duration-300 transform"
+          >
+              Сотрудничать
+          </a>
+
+        </div>
+
         <div className="flex flex-col">
-          <div className="bg-white rounded-2xl p-6 shadow-md mb-6 border">
+        <div className="bg-white rounded-2xl p-6 shadow-md mb-6 border">
             <p className="text-xl text-gray-700 font-semibold mb-4">Состав:</p>
             <ul className="space-y-2 text-gray-700">
               <li>{product.compound}</li>
             </ul>
           </div>
-        </div>
-
-        <div className="flex flex-col">
           {product.characteristics && (
             <div className="bg-white rounded-2xl p-6 shadow-md mb-6 border">
               <p className="text-xl text-gray-700 font-semibold mb-4">
@@ -87,17 +97,17 @@ export default function ProductPage({
           <div className="bg-gray-50 rounded-2xl p-6 shadow-md mb-6">
             <p className="text-xl text-gray-700 font-semibold mb-2">Цены</p>
             <p className="text-gray-800">
-              Опт: <span className="font-bold">{product.price_wholesale} ₽</span> /{" "}
+              Цена за банку: <span className="font-bold">{product.price_wholesale} ₽</span> /{" "}
               {product.unit}
             </p>
             <p className="text-gray-800">
-              Розница:{" "}
+              Цена за упаковку (20шт):{" "}
               <span className="font-bold">{product.price_retail} ₽</span> /{" "}
               {product.unit}
             </p>
           </div>
 
-          <div className="flex gap-2 flex-wrap mb-6">
+          <div className="flex gap-2 flex-wrap mb-5 md:mb-2">
             {product.tags?.map((tag) => (
               <span
                 key={tag}
@@ -107,12 +117,18 @@ export default function ProductPage({
               </span>
             ))}
           </div>
-
-          <button className="px-6 py-3 bg-orange-500 text-white rounded-xl shadow hover:bg-orange-600 transition text-lg">
-            Заказать
-          </button>
+          <a
+                  href="https://wa.me/79285455896"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-orange-500 block md:hidden  text-center w-full hover:bg-orange-800  text-white font-semibold text-lg px-20 py-4 rounded-lg transition duration-300 transform"
+              >
+                  Сотрудничать
+              </a>
         </div>
+        
       </div>
+      
     </div>
   );
 }

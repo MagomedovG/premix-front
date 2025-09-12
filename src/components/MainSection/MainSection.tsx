@@ -12,6 +12,7 @@ const MainSection = () => {
         loop
         playsInline
         preload="auto"
+        poster="/movie/poster.jpg" 
         className="absolute top-16 right-0 w-full md:w-[60%] h-full object-cover"
       >
         <source src="/movie/open.mp4" type="video/mp4" />
