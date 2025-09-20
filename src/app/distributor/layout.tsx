@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Premix Lab | Дистрибюторы",
-    description: "Оптовые поставки лимонадов, cold brew и чаев для баров, ресторанов и кофеен. Брендированные меню и акция 4+1.",
+    description: "Делайте бизнес на понятных условиях. Оптовые поставки лимонадов, cold brew и чаев для баров, ресторанов и кофеен. Брендированные меню и акция 4+1.",
     url: "https://premixlab.ru/distributor",
     siteName: "Premix Lab",
     locale: "ru_RU",
     type: "website",
     images: [
       {
-        url: "/distrtitle.png",
+        url: "https://premixlab.ru/distrtitle.png",
         width: 500,
         height: 315,
         alt: "Делайте бизнес на понятных условиях | Заготовки для общепита в Дагестане и по России",
