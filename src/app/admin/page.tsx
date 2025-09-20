@@ -29,7 +29,7 @@ export default function AdminPage() {
 
   return (
     <div className="flex flex-col items-center p-10 h-[95vh] pt-[20vh]">
-      <h1 className="text-2xl font-bold mb-6 text-black">Генерация QR для товара</h1>
+      <h1 className="text-2xl font-bold mb-6 text-black text-center">Генерация QR для товара</h1>
 
       {/* Выбор товара */}
       <select
@@ -60,7 +60,7 @@ export default function AdminPage() {
           >
             Скачать QR
           </button>
-          <p className="text-black">{link}</p>
+          <p className="text-black text-sm w-[50%] md:w-full">{link}</p>
         </div>
       )}
     </div>

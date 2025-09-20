@@ -5,7 +5,7 @@ const navItems = [
   { label: "Прайс-лист", href: "/#price-section" },
   { label: "Где попробовать", href: "/#clients-section" },
   { label: "Связаться", href: "/#submit-section" },
-  { label: "Партнерам", href: "/#submit-section" },
+  { label: "Партнерам", href: "/distributor" },
 ];
 export default function MainFooter() {
   const [scrolled, setScrolled] = useState(false);

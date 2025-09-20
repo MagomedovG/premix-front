@@ -1,37 +1,38 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import MainHeader from "@/components/MainHeader/MainHeader";
 import MainFooter from "@/components/MainFooter/MainFooter";
 
 
 
 export const metadata: Metadata = {
-  title: "Premix Lab | Заготовки на лимонады, чаи и cold brew для кафе и ресторанов",
-  description: "Щавель - 380р/л. Premix Lab — готовые заготовки для общепита: авторские лимонады, cold brew и фирменные чаи. Оптовые поставки, акция 4+1, брендированные меню с вашим логотипом. Доставка по Махачкале и Дагестану.",
-  authors: [{ name: "Premix Lab", url: "https://premixlab.ru" }],
+  title: "Premix Lab | Дистрибюторы",
+  description: "Сотрудничество на понятных условиях. Перепродажа заготовок для бара.",
+  authors: [{ name: "Сотрудничество", url: "https://premixlab.ru/distributor" }],
   icons:'/icons/favicon.ico',
-  metadataBase: new URL("https://premixlab.ru"),
+  metadataBase: new URL("https://premixlab.ru/distributor"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Premix Lab | Заготовки для общепита в Дагестане и по России",
+    title: "Premix Lab | Дистрибюторы",
     description: "Оптовые поставки лимонадов, cold brew и чаев для баров, ресторанов и кофеен. Брендированные меню и акция 4+1.",
-    url: "https://premixlab.ru",
+    url: "https://premixlab.ru/distributor",
     siteName: "Premix Lab",
     locale: "ru_RU",
     type: "website",
     images: [
       {
-        url: "/live/premixice.jpg",
-        width: 600,
+        url: "/distrtitle.png",
+        width: 500,
         height: 315,
-        alt: "Premix Lab | Заготовки для общепита в Дагестане и по России",
+        alt: "Делайте бизнес на понятных условиях | Заготовки для общепита в Дагестане и по России",
       },
     ],
   },
   keywords: [
     // Брендовые + гео
+    "Франшиза", "Дистрибюторы", "Бизнес в общепите", "Продажа заготовок", "Авторские чаи купить", "Заготовки на лимонады купить", "Сотрудничество с кофейнями", "Продажа заготовок", "Лимонады оптом",
     "Premix Lab", "Premix Lab Махачкала", "Premix Lab Дагестан", "Premix Lab официальный сайт", "Premix Lab напитки оптом",
 
     // Лимонады
@@ -77,10 +78,7 @@ export default function RootLayout({
         className={`antialiased`}
 
       >
-        <MainHeader/>
         {children}
-        <MainFooter/>
-
       </body>
     </html>
   );

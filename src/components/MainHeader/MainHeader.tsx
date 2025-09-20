@@ -6,7 +6,7 @@ const navItems = [
   { label: "Прайс-лист", href: "/#price-section" },
   { label: "Где попробовать", href: "/#clients-section" },
   { label: "Связаться", href: "/#submit-section" },
-  { label: "Партнерам", href: "/#submit-section" },
+  { label: "Партнерам", href: "/distributor" },
 ];
 
 export default function MainHeader() {
@@ -28,12 +28,10 @@ export default function MainHeader() {
       } p-4 md:p-6`}
     >
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
         <Link href="/">
           <img src="/premixlogo.svg" alt="Premix Logo" className="h-8" />
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex gap-8 text-white font-medium">
           {navItems.map((item, index) => (
             <Link
@@ -46,7 +44,6 @@ export default function MainHeader() {
           ))}
         </nav>
 
-        {/* Mobile burger */}
         <button
           className="md:hidden flex flex-col justify-center items-center w-8 h-8 relative"
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -69,7 +66,6 @@ export default function MainHeader() {
         </button>
       </div>
 
-      {/* Mobile menu (с анимацией) */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
           menuOpen
