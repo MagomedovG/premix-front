@@ -8,7 +8,7 @@ export const PriceData: SlideData[] = [
       data: {
         double:true,
         images:[
-            '/live/allpositions.jpg',
+            '/live/allin.JPG',
             '/catalog/catalog1page.png'
         ]
       },
@@ -23,7 +23,7 @@ export const PriceData: SlideData[] = [
       data: {
         double:true,
         images:[
-            '/live/allpositions.jpg',
+            '/live/allin3.jpg',
             '/catalog/catalog2page.png'
         ]
       },
