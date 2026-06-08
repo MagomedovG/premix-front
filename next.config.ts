@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Отключаем ошибку для useSearchParams
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
-  },
+  // experimental: {
+  //   missingSuspenseWithCSRBailout: false,
+  // },
   // Или пропускаем проверки во время сборки
   eslint: {
     ignoreDuringBuilds: true,

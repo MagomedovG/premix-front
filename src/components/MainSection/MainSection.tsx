@@ -34,7 +34,7 @@ const MainSection = () => {
         {/* Кнопки */}
         <div className="flex flex-col sm:flex-row justify-center gap-6 md:gap-4 mb-6">
           <Link
-            href="#price-section"
+            href="/catalog"
             className={`${styles.button} cursor-pointer bg-transparent hover:bg-[#BB0000] border border-[#BB0000] text-white py-3 px-8 rounded-full transition duration-300`}
           >
             СМОТРЕТЬ КАТАЛОГ

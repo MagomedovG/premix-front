@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from "next/link";
 const navItems = [
+  { label: "Каталог", href: "/catalog" },
   { label: "Прайс-лист", href: "/#price-section" },
   { label: "Где попробовать", href: "/#clients-section" },
   { label: "Связаться", href: "/#submit-section" },

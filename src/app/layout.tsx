@@ -1,69 +1,45 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import MainHeader from "@/components/MainHeader/MainHeader";
-import MainFooter from "@/components/MainFooter/MainFooter";
-
-
+import Analytics from "@/components/Seo/Analytics";
+import OrganizationJsonLd from "@/components/Seo/OrganizationJsonLd";
+import { buildPageMetadata, SITE_NAME } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Premix Lab | Заготовки на лимонады, чаи и cold brew для кафе и ресторанов",
-  description: "Щавель - 380р/л. Premix Lab — готовые заготовки для общепита: авторские лимонады, cold brew и фирменные чаи. Оптовые поставки, акция 4+1, брендированные меню с вашим логотипом. Доставка по Махачкале и Дагестану.",
-  authors: [{ name: "Premix Lab", url: "https://premixlab.ru" }],
-  icons:'/icons/favicon.ico',
-  metadataBase: new URL("https://premixlab.ru"),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Premix Lab | Заготовки для общепита в Дагестане и по России",
-    description: "Оптовые поставки лимонадов, cold brew и чаев для баров, ресторанов и кофеен. Брендированные меню и акция 4+1.",
-    url: "https://premixlab.ru",
-    siteName: "Premix Lab",
-    locale: "ru_RU",
-    type: "website",
-    images: [
-      {
-        url: "/live/premixice.jpg",
-        width: 600,
-        height: 315,
-        alt: "Premix Lab | Заготовки для общепита в Дагестане и по России",
-      },
+  ...buildPageMetadata({
+    title: `${SITE_NAME} | Заготовки для лимонадов, чаев и колд брю — Махачкала, Дагестан, Россия`,
+    description:
+      "Premix Lab — натуральные заготовки для кофеен и баров: лимонады (щавель от 380 ₽/л), авторские чаи, концентраты для колд брю и шоты. Оптовые поставки по Махачкале, Дагестану и всей России.",
+    path: "/",
+    keywords: [
+      "заготовки Махачкала",
+      "заготовки Дагестан",
+      "заготовки для кафе Россия",
+      "купить заготовки для лимонадов",
+      "щавель оптом Махачкала",
+      "колд брю оптом Дагестан",
+      "поставщик напитков для HoReCa",
     ],
+  }),
+  title: {
+    default: `${SITE_NAME} | Заготовки для лимонадов, чаев и колд брю`,
+    template: `%s | ${SITE_NAME}`,
   },
-  keywords: [
-    // Брендовые + гео
-    "Premix Lab", "Premix Lab Махачкала", "Premix Lab Дагестан", "Premix Lab официальный сайт", "Premix Lab напитки оптом",
-
-    // Лимонады
-    "Лимонады для кафе", "Авторские лимонады оптом", "Щавель заготовка","Заготовка на щавелевый лимонад", "Щавель", "Заготовки для лимонадов", "Напитки для баров оптом",
-
-    // Cold brew
-    "Cold brew оптом", "Колд брю кофе Махачкала", "Заготовка для холодного кофе", "Кофе для HoReCa Дагестан", 
-
-    // Чаи
-    "Авторские чаи для ресторанов", "Чай для баров и кафе", "Премиальные чаи оптом", "Заготовки для чая HoReCa",
-
-    // Для HoReCa
-    "Напитки для кафе и ресторанов", "HoReCa поставки Дагестан", "Оптовый поставщик напитков Махачкала", "Сиропы и заготовки для баров",
-    "Меню с логотипом для ресторанов", "Снабжение кофеен напитками", "Поставщик cold brew и чаев",
-
-    // УТП
-    "Акция 4+1 лимонады", "Где заказать напитки для кафе", "Оптовые напитки для HoReCa", "Поставщик заготовок в Махачкале",
-    "Напитки для заведений с доставкой", "Заготовки для баров Дагестан", "HoReCa продукция Premix Lab",
-  ],
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+  icons: {
+    icon: "/icons/favicon.ico",
+    apple: "/icons/favicon.ico",
   },
+  manifest: "/icons/favicon.ico",
+  verification: {
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || undefined,
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  },
+  category: "business",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#264653",
 };
 
 export default function RootLayout({
@@ -72,15 +48,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`antialiased`}
-
-      >
-        <MainHeader/>
+    <html lang="ru">
+      <body className="antialiased">
+        <OrganizationJsonLd />
         {children}
-        <MainFooter/>
-
+        <Analytics />
       </body>
     </html>
   );
