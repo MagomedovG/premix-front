@@ -1,0 +1,20 @@
+# Production: Next.js only, proxied by shared-nginx (no build on server)
+services:
+  frontend:
+    image: premix-site-frontend:latest
+    container_name: premix-site
+    env_file: .env
+    environment:
+      - NODE_ENV=production
+      - NODE_OPTIONS=--max-old-space-size=256
+    restart: unless-stopped
+    mem_limit: 384m
+    memswap_limit: 384m
+    cpus: 0.5
+    networks:
+      - nginx_shared
+
+networks:
+  nginx_shared:
+    external: true
+    name: nginx-shared
